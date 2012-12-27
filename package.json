@@ -1,15 +1,16 @@
 {
   "name": "text2num.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Convert numbers written in English into numbers",
   "main": "lib/text2num.js",
   "scripts": {
-    "test": "mocha "
+    "test": "cake test"
   },
-  "repository": "",
+  "repository": "https://github.com/c0bra/text2num.js.git",
   "author": "Brian Hann",
   "license": "BSD",
   "devDependencies": {
+    "coffee-script": "*",
     "mocha": "*",
     "chai": "*"
   },

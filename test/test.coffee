@@ -14,5 +14,17 @@ chai.should()
 123456789012.should.equal text2num("one hundred twenty three billion four hundred fifty six million seven hundred eighty nine thousand twelve")
 4000000000000000000000000000000000.should.equal text2num("four decillion")
 
+# Mix case
+text2num("FIVE hundred AND five").should.equal 505
+
+# Hyphens
 text2num("five-hundred and five").should.equal 505
 text2num("sixty- thousand three hundred and one").should.equal 60301
+
+# Decimals
+text2num("fifty point two").should.equal 50.2
+text2num("fifty dot two").should.equal 50.2
+text2num("fifty point twenty-two").should.equal 50.22
+text2num("fifty point six hundred five").should.equal 50.605
+text2num("fifty point six thousand and five").should.equal 50.6005
+text2num("fifty point two thousand and fifty two").should.equal 50.2052

@@ -43,27 +43,57 @@ Magnitude =
 
 text2num = (s) ->
   # Strip out any "and"s
-  s = s.replace /\band\b/g, ""
-  
+  s = s.replace /\band\b/gi, ""
+
   a = s.split /[\s-]+/
   n = 0
   g = 0
 
+  decimals = false
+  d  = 0
+  dn = 0
+  dg = 0
+
   for w in a
-      x = Small[w]
+    w = w.toLowerCase();
 
-      if x?
-          g += x
-      else if w == "hundred"
-          g *= 100
+    x = Small[w]
+
+    if x?
+      if decimals
+        dg += x
       else
-          x = Magnitude[w]
-          if x?
-              n += g * x
-              g = 0
+        g += x
+    else if w == "hundred"
+      if decimals
+        dg *= 100
+      else
+        g *= 100
+    else if w == "point" || w == "dot"
+      decimals = true
+    else
+        x = Magnitude[w]
+        if x?
+          if decimals
+            dn += dg * x
+            dg = 0
           else
-              throw "Unknown number: " + w
+            n += g * x
+            g = 0
+        else
+          throw "Unknown number: " + w
 
-  return n + g
+  d += dn + dg
+  d = moveDecimal(d)
+
+  if d > 0
+    return n + g + d
+  else
+    return n + g
+
+moveDecimal = (n) ->
+  l = n.toString().length
+  v = n/Math.pow(10, l)
+  return v
 
 module.exports = text2num
