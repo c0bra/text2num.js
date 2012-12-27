@@ -1,5 +1,5 @@
 {
-  "name": "text2num.js",
+  "name": "text2num",
   "version": "0.0.1",
   "description": "Convert numbers written in English into numbers",
   "main": "lib/text2num.js",
