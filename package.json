@@ -4,7 +4,7 @@
   "description": "Convert numbers written in English into numbers",
   "main": "lib/text2num.js",
   "scripts": {
-    "test": "cake test"
+    "test": "mocha --compilers coffee:coffee-script"
   },
   "repository": "https://github.com/c0bra/text2num.js.git",
   "author": "Brian Hann",

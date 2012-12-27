@@ -42,6 +42,9 @@ Magnitude =
     'decillion'   : 1000000000000000000000000000000000
 
 text2num = (s) ->
+  if !s? || s == ""
+    return s
+
   # Strip out any "and"s
   s = s.replace /\band\b/gi, ""
 

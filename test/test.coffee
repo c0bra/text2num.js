@@ -3,6 +3,10 @@ text2num = require('../src/text2num')
 chai = require 'chai'
 chai.should()
 
+describe "An empty string", ->
+  it "should return an empty string", ->
+    text2num("").should.equal ""
+
 describe "Simple phrases", ->
   it "should work", ->
     1.should.equal text2num("one")
