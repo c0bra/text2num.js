@@ -2,7 +2,7 @@
 
 Convert English phrases to their numerical equivalent. Code translated from and embellished on: [https://github.com/ghewgill/text2num](https://github.com/ghewgill/text2num)
 
-
+[![Build Status](https://travis-ci.org/c0bra/text2num.js.png)](https://travis-ci.org/c0bra/text2num.js)
 
 ## Installation
 
