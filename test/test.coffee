@@ -1,4 +1,4 @@
-text2num = require('../src/text2num').text2num
+text2num = require('../src/text2num')
 
 chai = require 'chai'
 chai.should()
@@ -15,3 +15,4 @@ chai.should()
 4000000000000000000000000000000000.should.equal text2num("four decillion")
 
 text2num("five-hundred and five").should.equal 505
+text2num("sixty- thousand three hundred and one").should.equal 60301

@@ -9,9 +9,11 @@
   "repository": "",
   "author": "Brian Hann",
   "license": "BSD",
-
   "devDependencies": {
     "mocha": "*",
     "chai": "*"
+  },
+  "engines": {
+    "node": "*"
   }
 }

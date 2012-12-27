@@ -41,10 +41,10 @@ Magnitude =
     'nonillion'   : 1000000000000000000000000000000
     'decillion'   : 1000000000000000000000000000000000
 
-exports.text2num = (s) ->
+text2num = (s) ->
   # Strip out any "and"s
   s = s.replace /\band\b/g, ""
-
+  
   a = s.split /[\s-]+/
   n = 0
   g = 0
@@ -65,3 +65,5 @@ exports.text2num = (s) ->
               throw "Unknown number: " + w
 
   return n + g
+
+module.exports = text2num
