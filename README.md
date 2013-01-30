@@ -16,7 +16,7 @@ npm install text2num
 require('text2num')
 
 # Simple
-var number = text2num("three")
+number = text2num("three")
 # number == 3
 
 # Longer
